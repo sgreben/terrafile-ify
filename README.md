@@ -20,16 +20,16 @@ Or [download the binary](https://github.com/sgreben/terrafile-ify/releases/lates
 
 ```bash
 # Linux
-curl -LO https://github.com/sgreben/terrafile-ify/releases/download/0.1.0/terrafile-ify_0.1.0_linux_x86_64.zip
-unzip terrafile-ify_0.1.0_linux_x86_64.zip
+curl -LO https://github.com/sgreben/terrafile-ify/releases/download/0.1.1/terrafile-ify_0.1.1_linux_x86_64.zip
+unzip terrafile-ify_0.1.1_linux_x86_64.zip
 
 # OS X
-curl -LO https://github.com/sgreben/terrafile-ify/releases/download/0.1.0/terrafile-ify_0.1.0_osx_x86_64.zip
-unzip terrafile-ify_0.1.0_osx_x86_64.zip
+curl -LO https://github.com/sgreben/terrafile-ify/releases/download/0.1.1/terrafile-ify_0.1.1_osx_x86_64.zip
+unzip terrafile-ify_0.1.1_osx_x86_64.zip
 
 # Windows
-curl -LO https://github.com/sgreben/terrafile-ify/releases/download/0.1.0/terrafile-ify_0.1.0_windows_x86_64.zip
-unzip terrafile-ify_0.1.0_windows_x86_64.zip
+curl -LO https://github.com/sgreben/terrafile-ify/releases/download/0.1.1/terrafile-ify_0.1.1_windows_x86_64.zip
+unzip terrafile-ify_0.1.1_windows_x86_64.zip
 ```
 
 ## Usage

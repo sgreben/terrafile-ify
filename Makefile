@@ -1,4 +1,4 @@
-VERSION = 0.1.0
+VERSION = 0.1.1
 
 APP      := terrafile-ify
 PACKAGES := $(shell go list -f {{.Dir}} ./...)

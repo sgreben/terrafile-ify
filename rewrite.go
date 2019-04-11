@@ -14,8 +14,8 @@ import (
 
 const (
 	identModule  = "module"
-	identSource  = "Source"
-	identVersion = "Version"
+	identSource  = "source"
+	identVersion = "version"
 )
 
 type rewriter struct {
@@ -29,11 +29,11 @@ func (r *rewriter) RewriteFile(path string) error {
 	}
 	b, err := ioutil.ReadFile(path)
 	if err != nil {
-		return fmt.Errorf("read terraform Source %q: %v", path, err)
+		return fmt.Errorf("read terraform source %q: %v", path, err)
 	}
 	astRoot, err := hcl.Parse(string(b))
 	if err != nil {
-		return fmt.Errorf("parse terraform Source %q: %v", path, err)
+		return fmt.Errorf("parse terraform source %q: %v", path, err)
 	}
 	objList, ok := astRoot.Node.(*ast.ObjectList)
 	if !ok {
@@ -44,11 +44,11 @@ func (r *rewriter) RewriteFile(path string) error {
 	}
 	var buf bytes.Buffer
 	if err := printer.Fprint(&buf, astRoot); err != nil {
-		return fmt.Errorf("format terraform Source %q: v", err)
+		return fmt.Errorf("format terraform source %q: v", err)
 	}
 	fmt.Fprintln(&buf)
 	if err := ioutil.WriteFile(path, buf.Bytes(), info.Mode()); err != nil {
-		return fmt.Errorf("write terraform Source %q: %v", path, err)
+		return fmt.Errorf("write terraform source %q: %v", path, err)
 	}
 	return nil
 }
@@ -94,7 +94,7 @@ func (r *rewriter) RewriteAST(root *ast.ObjectList) error {
 		if !ok {
 			continue
 		}
-		sourceLiteral.Token.Text = fmt.Sprintf("%q", mappedReference)
+		sourceLiteral.Token.Text = fmt.Sprintf("%q", mappedReference.Source)
 		if versionObjIndex != nil {
 			i := *versionObjIndex
 			objVal.List.Items = append(objVal.List.Items[:i], objVal.List.Items[i+1:]...)

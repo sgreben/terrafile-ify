@@ -92,13 +92,15 @@ func main() {
 	if config.Rewrite {
 		var rewriter rewriter
 		replaceByVendored := make(moduleReferenceMap)
+		paths := make(map[string]bool)
 		for _, r := range scanner.references {
 			if r, ok := r.Git(); ok {
 				replaceByVendored[r.Key()] = r.Vendor()
+				paths[r.path] = true
 			}
 		}
 		rewriter.replaceBy = replaceByVendored
-		for _, path := range scanner.paths {
+		for path := range paths {
 			log.Printf("rewriting %q", path)
 			if err := rewriter.RewriteFile(path); err != nil {
 				log.Fatal(err)
