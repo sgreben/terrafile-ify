@@ -20,30 +20,32 @@ Or [download the binary](https://github.com/sgreben/terrafile-ify/releases/lates
 
 ```bash
 # Linux
-curl -LO https://github.com/sgreben/terrafile-ify/releases/download/0.0.1/terrafile-ify_0.0.1_linux_x86_64.zip
-unzip terrafile-ify_0.0.1_linux_x86_64.zip
+curl -LO https://github.com/sgreben/terrafile-ify/releases/download/0.1.0/terrafile-ify_0.1.0_linux_x86_64.zip
+unzip terrafile-ify_0.1.0_linux_x86_64.zip
 
 # OS X
-curl -LO https://github.com/sgreben/terrafile-ify/releases/download/0.0.1/terrafile-ify_0.0.1_osx_x86_64.zip
-unzip terrafile-ify_0.0.1_osx_x86_64.zip
+curl -LO https://github.com/sgreben/terrafile-ify/releases/download/0.1.0/terrafile-ify_0.1.0_osx_x86_64.zip
+unzip terrafile-ify_0.1.0_osx_x86_64.zip
 
 # Windows
-curl -LO https://github.com/sgreben/terrafile-ify/releases/download/0.0.1/terrafile-ify_0.0.1_windows_x86_64.zip
-unzip terrafile-ify_0.0.1_windows_x86_64.zip
+curl -LO https://github.com/sgreben/terrafile-ify/releases/download/0.1.0/terrafile-ify_0.1.0_windows_x86_64.zip
+unzip terrafile-ify_0.1.0_windows_x86_64.zip
 ```
 
 ## Usage
 
 ```text
+terrafile-ify (generate|rewrite|execute)
+
+    generate    Generate Terrafiles
+    rewrite     Rewrite module references to use vendored modules
+    execute     Run the `terrafile` binary on each Terrafile
+
 Usage of terrafile-ify:
-  -execute
-    	run the terrafile binary on each directory (default: false)
-  -generate
-    	generate Terrafiles on disk (default: false, just print to stdout)
   -ignore string
     	ignore files and directories matching this glob pattern (default ".terraform")
-  -rewrite
-    	rewrite files in-place (default: false)
+  -terrafile-binary string
+    	terrafile binary name (default "terrafile")
   -version
     	print version and exit
 ```

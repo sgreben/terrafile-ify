@@ -35,5 +35,11 @@ unzip ${APP}_${VERSION}_windows_x86_64.zip
 ## Usage
 
 ```text
+${APP} (generate|rewrite|execute)
+
+    generate    Generate Terrafiles
+    rewrite     Rewrite module references to use vendored modules
+    execute     Run the `terrafile` binary on each Terrafile
+
 $USAGE
 ```
